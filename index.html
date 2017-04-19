@@ -4,72 +4,94 @@
 
   <!-- meta -->
   <meta charset="utf-8" />
+  <meta http-equiv="refresh" content="60">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="description" content="How people define digital humanities." />
-  <meta name="author" content="Jason A. Heppler" />
-  <meta name="keywords" content="digital history, digital humanities" />
-  <meta name="copyright" content="Copyright (c) 2014 Jason Hepler" />
-  <title>What Is Digital Humanities?</title>
+  <title>Day of Digital Humanities 2017 - Gettysburg College</title>
 
   <script src="lib/underscore-min.js"></script>
   <script src="lib/d3.v3.min.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/normalize.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
   <style type="text/css">
   body {
-    color: #434343;
-    background: #fff;
+    color: #000000;
+    background: #ffffff;
     line-height: 16px;
     margin: 40px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2 {
+    color: #002f6c;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
   }
 
   #content {
-    width: 800px;
+    width: 100%;
     padding-top: 20px;
   }
 
   p#notes {
-    font-size: 13px;
-    line-height: 17px;
-    color: #666;
+    font-size: 1em;
+    line-height: 1.1em;
+    color: #000000;
     padding-top: 15px;
   }
 
   text.quote_text {
-    font-size: 25px;
-    line-height: 28px;
+    font-size: 1.3em;
+    line-height: 1.4em;
+    float: left;
+    font-weight: 600;
   }
 
   text.quote_source {
-    font-size: 15px;
-    line-height: 52px;
-    font-variant: small-caps;
-    float: right;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    float: left;
+    padding-top: 15px;
+    font-weight: 600;
+    color: #e87722;
   }
 </style>
 
 </head>
 <body>
 
-  <h1>What Is Digital Humanities?</h1>
+  <div>
+    <div style="float: left;">
+      <h1>Day of Digital Humanities 2017</h1>
+    </div>
+    <div style="float: right; width:20%;">
+      <img style="margin-bottom: 10px;" src="//www.gettysburg.edu/dotAsset/52657a07-ca64-4e78-8618-d22c726df43e.png"/>
+    </div>
+  </div>
+
+  <hr>
 
   <div id="content">
     <div class="row">
-      <span id="quote_text"></span>
-      <span id="quote_source"></span>
+      <div id="quote_text"></div>
+      <div id="quote_source"></div>
     </div>
-
     <hr>
-
-    <p id="notes"><strong>NB</strong>: Refresh the page to get a new definition. Quotes were pulled from participants from the <a href="http://twitter.com/DayofDH">Day of DH</a> between 2009-2014. As of January 2015, the database contains 817 rows and randomly selects a quote each time the page is loaded. If you want to do something cool with the data, I am providing a download for the CSV I compiled <a href="http://github.com/hepplerj/whatisdigitalhumanities">here</a>.</p>
-
-    <p>Made by <a href="http://jasonheppler.org">Jason Heppler</a>. Problems? Questions? I'm <a href="http://twitter.com/jaheppler">@jaheppler</a> on Twitter.</p>
+    <div>
+      <div style="display:inline-block; width:90%; vertical-align: middle;">
+        <p id="notes">This site was created as part of the international <a href="//dayofdh2017.linhd.es/">Day of Digital Humanities 2017</a>. Digital humanities practictioners at Gettysburg College were asked to provide their thoughts on the digital humanities and how it impacts their teaching and research. Refresh the page to get a new quote, or just wait 60 seconds and it will change.</p>
+        <p id="notes">This site is adapted from code originally by <a href="http://jasonheppler.org">Jason Heppler</a> and is available on <a href="//github.com/rmiessle/dayofdh">GitHub</a>. Quotes are pulled from a .csv file using the <a href="//d3js.org">D3.js</a> JavaScript library.</p>
+      </div>
+      <div style="width:10%; display:inline-block; float:right; vertical-align: middle;">
+        <img src="//dayofdh2017.linhd.es/wp-content/uploads/2017/03/logo-extendido.jpg"/>
+      </div>
+    </div>
 
   </div>
 
   <script>
-  d3.csv("dayofquotes_full.csv", function(error, quotes) {
+  d3.csv("dayofdh.csv", function(error, quotes) {
 
     // Grab random line from CSV
     randomQuote = randomDraw(quotes);
@@ -86,7 +108,7 @@
 
     texts.append("text")
       .attr("class", "quote_source")
-      .text(function(d) { return " " + d.name; })
+      .text(function(d) { return d.name + ", " + d.title; })
 
   });
 
