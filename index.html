@@ -4,7 +4,7 @@
 
   <!-- meta -->
   <meta charset="utf-8" />
-  <meta http-equiv="refresh" content="60">
+  <meta http-equiv="refresh" content="300">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Day of Digital Humanities 2017 - Gettysburg College</title>
 
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/normalize.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
 
   <style type="text/css">
   body {
@@ -23,7 +24,7 @@
     font-family: 'Open Sans', sans-serif;
   }
 
-  h1, h2 {
+  h1, h2, h3, h4, h5, h6 {
     color: #002f6c;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
@@ -56,6 +57,24 @@
     font-weight: 600;
     color: #e87722;
   }
+
+  button.button#refresh {
+  	color: #ffffff !important;
+  	border: none !important;
+  	background-color: #002f6c !important;
+  	border-radius: 4px !important;
+  	font-family: 'Open Sans', sans-serif !important;
+  	font-weight: 500 !important;
+  	font-size: 1.1em !important;
+  	padding: 10px 10px !important;
+  	-webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+  button.button#refresh:hover {
+    background-color: #e87722 !important;
+    border: none !important;
+    color: #ffffff !important;
+}
 </style>
 
 </head>
@@ -66,7 +85,7 @@
       <h1>Day of Digital Humanities 2017</h1>
     </div>
     <div style="float: right; width:20%;">
-      <img style="margin-bottom: 10px;" src="//www.gettysburg.edu/dotAsset/52657a07-ca64-4e78-8618-d22c726df43e.png"/>
+      <img style="margin-bottom: 10px;" src="images/gbclogo.png"/>
     </div>
   </div>
 
@@ -80,11 +99,12 @@
     <hr>
     <div>
       <div style="display:inline-block; width:90%; vertical-align: middle;">
-        <p id="notes">This site was created as part of the international <a href="//dayofdh2017.linhd.es/">Day of Digital Humanities 2017</a>. Digital humanities practictioners at Gettysburg College were asked to provide their thoughts on the digital humanities and how it impacts their teaching and research. Refresh the page to get a new quote, or just wait 60 seconds and it will change.</p>
-        <p id="notes">This site is adapted from code originally by <a href="http://jasonheppler.org">Jason Heppler</a> and is available on <a href="//github.com/rmiessle/whatisdigitalhumanities">GitHub</a>. Quotes are pulled from a .csv file using the <a href="//d3js.org">D3.js</a> JavaScript library.</p>
+        <p id="notes"><strong>Day of Digital Humanities 2017 - Gettysburg College</strong> was created as part of the international <a href="//dayofdh2017.linhd.es/">Day of Digital Humanities 2017</a>. Digital humanities practictioners at Gettysburg College were asked to provide their thoughts on the digital humanities and how it impacts their teaching, learning, and research.</p>
+        <button id="refresh" type="button" value="Get a New Quote" class="button" onClick="window.location.reload()">Get a New Quote</button>
+        <p id="notes">Technical information: This site is adapted from code originally by <a href="http://jasonheppler.org">Jason Heppler</a> and is available on <a href="//github.com/rmiessle/whatisdigitalhumanities">GitHub</a>. It works by pulling quotes from a .csv file using the <a href="//d3js.org">D3.js</a> data visualization JavaScript library.</p>
       </div>
       <div style="width:10%; display:inline-block; float:right; vertical-align: middle;">
-        <img src="//dayofdh2017.linhd.es/wp-content/uploads/2017/03/logo-extendido.jpg"/>
+        <img src="images/dayofdh2017logo.jpg"/>
       </div>
     </div>
 
